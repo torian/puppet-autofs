@@ -8,23 +8,21 @@ FIXME
 
 ## Usage ##
 
-  include autofs
+    include autofs
 
-  autofs::map { 'home':
-    key      => '*',
-    prefix   => '/mnt/home',
-    options  => '-fstype=nfs,rw',
-    location => 'nfs.server:/srv/homes/&',
-    order    => 0,
-  }
+    autofs::map { 'home':
+      key      => '*',
+      prefix   => '/mnt/home',
+      options  => '-fstype=nfs,rw',
+      location => 'nfs.server:/srv/homes/&',
+    }
 
-  autofs::map { 'isos':
-    key      => [ '/mnt/a', '/mnt/b', '/mnt/c' ],
-    prefix   => '/-',
-    options  => '-fstype=nfs,rw',
-    location => [ ':/srv/isos/aa.iso', ':/srv/isos/bb.iso', ':/srv/isos/cc.iso' ],
-    order    => 1,
-  }
+    autofs::map { 'isos':
+      key      => [ '/mnt/a', '/mnt/b', '/mnt/c' ],
+      prefix   => '/-',
+      options  => '-fstype=nfs,rw',
+      location => [ ':/srv/isos/aa.iso', ':/srv/isos/bb.iso', ':/srv/isos/cc.iso' ],
+    }
 
 FIXME
 
